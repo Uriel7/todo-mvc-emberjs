@@ -1,0 +1,26 @@
+/ = input id="new-todo"  type="text" placeholder="Qué necesitas hacer?" value=newTitle action="createTodo"
+
+/ section#main
+/   ul#todo-list
+/     each todo in model
+/       todo-item todo=todo acceptChanges="acceptChanges" deleteTodo="deleteTodo"
+
+/   = input type="checkbox" id="toggle-all"
+
+/ footer#footer
+/   span#todo-count
+/     strong 2 
+/     |todos left
+
+/   ul#filters
+/     li
+/       link-to "todos.index" activeClass="selected"  | All
+/     li
+/       link-to "todos.active" activeClass="selected" | Active
+/     li
+/       link-to "todos.complete" activeClass="selected" | Completed
+
+/   button#clear-completed
+/     | Limpiar completados (1)
+
+= todo-list createTodo="createTodo" model=model

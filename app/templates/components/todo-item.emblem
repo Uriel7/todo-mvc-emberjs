@@ -1,0 +1,8 @@
+
+li class="{{if todo.isCompleted 'completed'}}"
+  if isEditing
+    = input type="text" class="edit" value=title focus-out="acceptChanges" insert-newline="acceptChanges"
+  else
+    = input type="checkbox" checked=todo.isCompleted class="toggle"
+    label doubleClick="editTodo" = todo.title
+    button.destroy click="'deleteTodo' todo"
